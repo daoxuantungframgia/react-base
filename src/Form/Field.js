@@ -14,7 +14,7 @@ export default class Field extends Component {
 
   render() {
     const { component, value, ...rest } = this.props
-    const inputValue = value && value.value
+    const inputValue = (value && value.value) || ''
     const meta = value ? value.meta : {}
     return (
       <div>

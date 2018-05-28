@@ -17,6 +17,7 @@ class CategoriesForm extends Component {
             value={values.name}
             updateProperty={updateProperty}
             component={InputField}
+            type='text'
           />
 
           <Field label='địa chỉ'
@@ -25,6 +26,7 @@ class CategoriesForm extends Component {
             value={values.address}
             updateProperty={updateProperty}
             component={InputField}
+            type='text'
           />
           <button type='submit'> submit </button>
         </Form>

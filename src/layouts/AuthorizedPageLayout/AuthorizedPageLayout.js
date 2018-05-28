@@ -1,6 +1,5 @@
 import React from 'react'
-import { Switch, Route, NavLink } from 'react-router-dom'
-import Nav from 'components/Nav'
+import { Switch, Route } from 'react-router-dom'
 import classes from './AuthorizedPageLayout.scss'
 import Dashboard from '../../pages/Dashboard'
 import Counter from '../../pages/Counter'
