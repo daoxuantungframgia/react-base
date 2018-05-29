@@ -3,13 +3,16 @@ import mobxForm from 'Form/MobxForm'
 import Form from 'Form/Form'
 import InputField from 'components/InputField'
 import Field from 'Form/Field'
+import classNames from 'classnames'
 import { validateCategoriesForm } from './validate/validateCategoriesForm'
+import classes from './CategoriesForm.scss'
 
 class CategoriesForm extends Component {
+
   render() {
     const { submitForm, updateProperty, values, categoriesStore } = this.props
     return (
-      <div>
+      <div className={classes.categoriesFormWrapper}>
         <Form onSubmit={submitForm(categoriesStore.submitCategory)}>
           <Field label='tên danh mục'
             placeholder='nhập tên danh mục'
@@ -20,15 +23,9 @@ class CategoriesForm extends Component {
             type='text'
           />
 
-          <Field label='địa chỉ'
-            placeholder='nhập địa chỉ'
-            name='address'
-            value={values.address}
-            updateProperty={updateProperty}
-            component={InputField}
-            type='text'
-          />
-          <button type='submit'> submit </button>
+          <button type='submit' className={classNames('btn btn-success', classes.btnSubmit)}>
+            submit
+          </button>
         </Form>
       </div>
     )

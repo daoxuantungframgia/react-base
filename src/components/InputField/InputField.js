@@ -1,4 +1,5 @@
 import React from 'react'
+import classes from './InputField.scss'
 
 const InputField = ({
   value,
@@ -21,7 +22,7 @@ const InputField = ({
       type={type}
     />
     { touched && error &&
-      <span className='alert alert-danger'> {error} </span>
+      <span className={classes.error}> {error} </span>
     }
   </div>
 )

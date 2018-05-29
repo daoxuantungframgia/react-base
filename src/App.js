@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'react-select/dist/react-select.css'
 import Routes from './routes'
 import CoreLayout from './layouts/CoreLayout'
 

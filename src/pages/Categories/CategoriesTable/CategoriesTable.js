@@ -2,7 +2,7 @@ import React from 'react'
 import { observer } from 'mobx-react'
 import CategoriesCell from './CategoriesCell'
 
-const CategoriesTable = ({ categoriesStore }) => (
+const CategoriesTable = ({ categoriesStore, categoriesForm }) => (
   <table className='table'>
     <thead>
       <tr>
@@ -13,7 +13,11 @@ const CategoriesTable = ({ categoriesStore }) => (
     </thead>
     <tbody>
       { categoriesStore.categories && categoriesStore.categories.map((category) => (
-        <CategoriesCell category={category} key={category.id} categoriesStore={categoriesStore} />
+        <CategoriesCell category={category}
+          key={category.id}
+          categoriesStore={categoriesStore}
+          categoriesForm={categoriesForm}
+        />
       )) }
     </tbody>
   </table>
