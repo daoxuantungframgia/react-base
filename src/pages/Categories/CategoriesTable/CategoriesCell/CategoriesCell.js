@@ -1,6 +1,5 @@
 import React from 'react'
 import classNames from 'classnames'
-import { observer } from 'mobx-react'
 import classes from '../CategoriesTable.scss'
 import { initialValues } from 'Form/Api'
 
@@ -26,4 +25,4 @@ const CategoriesCell = ({ category, categoriesStore, categoriesForm }) => (
   </tr>
 )
 
-export default observer(CategoriesCell)
+export default CategoriesCell

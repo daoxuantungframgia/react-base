@@ -21,7 +21,6 @@ export default class Field extends Component {
     const { component, value, ...rest } = this.props
     const inputValue = (value && value.value) || ''
     const meta = (value && value.meta) || {}
-    console.log(value)
     return (
       <div>
         { <this.component {...rest}

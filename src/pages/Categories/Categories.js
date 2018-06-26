@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 import FormStore from 'Form/FormStore'
+import WrapperLoading from 'components/WrapperLoading'
 import CategoriesTable from './CategoriesTable'
 import CategoriesStore from './stores/Categories'
 import classes from './Categories.scss'
@@ -22,9 +23,11 @@ export default class Categories extends Component {
           <CategoriesForm categoriesStore={categoriesStore}
           />
         </div>
-        <CategoriesTable categoriesStore={categoriesStore}
-          categoriesForm={FormStore.getPropertyForStore('categoriesForm')}
-        />
+        <WrapperLoading>
+          <CategoriesTable categoriesStore={categoriesStore}
+            categoriesForm={FormStore.getPropertyForStore('categoriesForm')}
+          />
+        </WrapperLoading>
       </div>
     )
   }
