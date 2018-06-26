@@ -1,9 +1,11 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import AuthorizedPageLayout from '../layouts/AuthorizedPageLayout'
-import UnAuthorizedPageLayout from '../layouts/UnAuthorizedPageLayout'
-import PageNotFound from '../pages/PageNotFound'
-import HomePage from '../pages/HomePage'
+import asyncComponent from './asyncComponent'
+
+const AuthorizedPageLayout = asyncComponent(() => import('layouts/AuthorizedPageLayout'))
+const UnAuthorizedPageLayout = asyncComponent(() => import('layouts/UnAuthorizedPageLayout'))
+const PageNotFound = asyncComponent(() => import('pages/PageNotFound'))
+const HomePage = asyncComponent(() => import('pages/HomePage'))
 
 const Routes = () => (
   <Switch>

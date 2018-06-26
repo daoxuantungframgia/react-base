@@ -1,5 +1,5 @@
 import React from 'react'
-import { observer } from 'mobx-react'
+import classes from './InputField.scss'
 
 const InputField = ({
   value,
@@ -7,7 +7,8 @@ const InputField = ({
   onChange,
   label,
   placeholder,
-  name
+  name,
+  type
 }) => (
   <div className='form-group'>
     <label className='control-label'>
@@ -18,11 +19,12 @@ const InputField = ({
       name={name}
       value={value}
       onChange={onChange}
+      type={type}
     />
     { touched && error &&
-      <span className='alert alert-danger'> {error} </span>
+      <span className={classes.error}> {error} </span>
     }
   </div>
 )
 
-export default observer(InputField)
+export default InputField

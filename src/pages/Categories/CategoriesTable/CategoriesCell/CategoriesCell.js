@@ -11,8 +11,8 @@ const handleEditCategory = (category) => () => {
   })
 }
 
-const CategoriesCell = ({ category, categoriesStore }) => (
-  <tr >
+const CategoriesCell = ({ category, categoriesStore, categoriesForm }) => (
+  <tr className={classNames(categoriesForm && categoriesForm.id === category.id && classes.active)}>
     <td> { category.name } </td>
     <td> { category.createdDate } </td>
     <td className={classes.action}>

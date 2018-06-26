@@ -22,6 +22,17 @@ class CategoriesStore {
     this.categories = categories
   })
 
+  convertCategoriesToOptions = () => {
+    return this.categories.map((category) => ({
+      value: category.id,
+      label: category.name
+    }))
+  }
+
+  getCategoryNameById = (id) => {
+    return this.categories.filter((category) => category.id === id)[0].name
+  }
+
   submitCategory = async (category) => {
     if (category.id) {
       await API.put({

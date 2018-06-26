@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { observer } from 'mobx-react'
+import FormStore from 'Form/FormStore'
 import CategoriesTable from './CategoriesTable'
 import CategoriesStore from './stores/Categories'
 import classes from './Categories.scss'
@@ -18,9 +19,12 @@ export default class Categories extends Component {
     return (
       <div>
         <div className={classes.createNew}>
-          <CategoriesForm categoriesStore={categoriesStore}/>
+          <CategoriesForm categoriesStore={categoriesStore}
+          />
         </div>
-        <CategoriesTable categoriesStore={categoriesStore} />
+        <CategoriesTable categoriesStore={categoriesStore}
+          categoriesForm={FormStore.getPropertyForStore('categoriesForm')}
+        />
       </div>
     )
   }
