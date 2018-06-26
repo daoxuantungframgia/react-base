@@ -1,7 +1,9 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import { asyncComponent } from 'routes'
 import classes from './UnAuthorizedPageLayout.scss'
-import Login from '../../pages/Login'
+
+const Login = asyncComponent(() => import('pages/Login'))
 
 const UnAuthorizedPageLayout = ({ match }) => (
   <div className={classes.wrapper}>

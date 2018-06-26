@@ -1,10 +1,12 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import { asyncComponent } from 'routes'
 import AdminMenu from 'components/AdminMenu'
-import Categories from 'pages/Categories'
-import SubCategories from 'pages/SubCategories'
-import Products from 'pages/Products'
 import classes from './AdminLayout.scss'
+
+const Categories = asyncComponent(() => import('pages/Categories'))
+const SubCategories = asyncComponent(() => import('pages/SubCategories'))
+const Products = asyncComponent(() => import('pages/Products'))
 
 const AdminLayout = ({ match, history }) => (
   <div className={classes.wrapper}>

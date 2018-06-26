@@ -1,9 +1,11 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import { asyncComponent } from 'routes'
 import classes from './AuthorizedPageLayout.scss'
-import Dashboard from '../../pages/Dashboard'
-import Counter from '../../pages/Counter'
-import AdminLayout from '../AdminLayout'
+
+const Dashboard = asyncComponent(() => import('pages/Dashboard'))
+const Counter = asyncComponent(() => import('pages/Counter'))
+const AdminLayout = asyncComponent(() => import('../AdminLayout'))
 
 const AuthorizedPageLayout = ({ match, history }) => (
   <div className={classes.wrapper}>

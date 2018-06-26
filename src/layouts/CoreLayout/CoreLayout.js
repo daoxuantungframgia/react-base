@@ -4,7 +4,6 @@ import classes from './CoreLayout.scss'
 import apiStore from 'store/ApiStore'
 import Notification from 'components/Notification'
 import loadingImage from 'assets/loading.gif'
-
 @observer
 export default class CoreLayout extends Component {
   render() {
